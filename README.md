@@ -25,7 +25,7 @@ Linux File Comparer
 전체적인 프로그램 흐름은 아래의 그림과 같다.
 
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/image01.png?raw=true" title="image01.png" alt="image01.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image01.png?raw=true" title="image01.png" alt="image01.png"></img><br/>
 </center>
 
  1. 프로그램을 실행하면 `program_init()` 함수를 호출한다. 
@@ -39,7 +39,7 @@ Linux File Comparer
 ### fsha1 명령(쓰레드를 이용한 탐색)
 
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/image02.png?raw=true" title="image02.png" alt="image02.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image02.png?raw=true" title="image02.png" alt="image02.png"></img><br/>
 </center>
 
  1. 검색 조건이 저장되는 `CheckerData`가 전역변수로 선언되어 있다.
@@ -48,7 +48,7 @@ Linux File Comparer
  3. `start_search` 함수에서 사용자가 입력한 쓰레드 개수만큼 쓰레드를 만들어 검색을 수행한다. 쓰레드마다 `thread_search` 함수를 실행하게 되는데, 아래의 그림은 이 함수의 흐름을 나타낸 것이다.
 
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/image03.png?raw=true" title="image03.png" alt="image03.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image03.png?raw=true" title="image03.png" alt="image03.png"></img><br/>
 </center>
 
  1. `thread_search` 함수에서 `path_queue`와 `fileset`은 공유되는 메모리 공간이므로 접근시 mutex를 잠근다.
@@ -71,7 +71,7 @@ Linux File Comparer
  * 아래의 그림은 동작 흐름을 나타낸 것이다.
 
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/image04.png?raw=true" title="image04.png" alt="image04.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image04.png?raw=true" title="image04.png" alt="image04.png"></img><br/>
 </center>
 
  * 휴지통 파일 정보는 메인 메모리의 `global_trash_list`에 저장된다.
@@ -89,7 +89,7 @@ Linux File Comparer
 * `[LIST_TYPE]`과 `[CATEGORY]`의 조합에 따라 수행해야 하는 정렬 작업이 모호한 것이 있었다. 그래서 이 프로그램에서는 아래와 같이 동작하도록 하였다.
 
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/table01.png?raw=true" title="table01.png" alt="table01.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/table01.png?raw=true" title="table01.png" alt="table01.png"></img><br/>
 </center>
 
 ---
@@ -106,7 +106,7 @@ Linux File Comparer
  `restore` 명령은 `global_trash_list`로부터 복원할 파일을 선택하여 복원하는 명령이다. `trash` 명령을 통해 복원할 파일의 인덱스를 파악할 수 있다. 이 인덱스는 `restore`의 인자가 된다. `restore`의 흐름은 아래의 그림과 같다.
 
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/image05.png?raw=true" title="image05.png" alt="image05.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image05.png?raw=true" title="image05.png" alt="image05.png"></img><br/>
 </center>
 
 
@@ -119,14 +119,14 @@ Linux File Comparer
 ---
    
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/image06.png?raw=true" title="image06.png" alt="image06.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image06.png?raw=true" title="image06.png" alt="image06.png"></img><br/>
 </center>
 
 `make`를 입력하여 컴파일을 하였다. `ssu_sfinder`이 생성되었다.
 
 #### 일반유저 `sjh`로 실행한 경우
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/image07.png?raw=true" title="image07.png" alt="image07.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image07.png?raw=true" title="image07.png" alt="image07.png"></img><br/>
 </center>
 
  쓰레드 개수를 5로 지정하여 중복 파일을 탐색하였다.
@@ -135,13 +135,13 @@ Linux File Comparer
 
  
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/image08.png?raw=true" title="image08.png" alt="image08.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image08.png?raw=true" title="image08.png" alt="image08.png"></img><br/>
 </center>
 
 이후에 `/home/sjh/.duplicate_20172644.log` 파일의 내용을 확인하였다.
 
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/image09.png?raw=true" title="image09.png" alt="image09.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image09.png?raw=true" title="image09.png" alt="image09.png"></img><br/>
 </center>
 
 정상적으로 수행되었다.
@@ -149,11 +149,11 @@ Linux File Comparer
 `delete –l 5 –i` 를 수행하였다.
 
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/image10.png?raw=true" title="image10.png" alt="image10.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image10.png?raw=true" title="image10.png" alt="image10.png"></img><br/>
 </center>
 
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/image11.png?raw=true" title="image11.png" alt="image11.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image11.png?raw=true" title="image11.png" alt="image11.png"></img><br/>
 </center>
 
 정상적으로 수행되었다.
@@ -161,15 +161,15 @@ Linux File Comparer
 `delete –l 1 –t`를 입력하여 휴지통에 파일을 넣어보겠다.
 
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/image12.png?raw=true" title="image12.png" alt="image12.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image12.png?raw=true" title="image12.png" alt="image12.png"></img><br/>
 </center>
 
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/image13.png?raw=true" title="image13.png" alt="image13.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image13.png?raw=true" title="image13.png" alt="image13.png"></img><br/>
 </center>
 
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/image14.png?raw=true" title="image14.png" alt="image14.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image14.png?raw=true" title="image14.png" alt="image14.png"></img><br/>
 </center>
 
 정상적으로 수행되었다.
@@ -177,17 +177,17 @@ Linux File Comparer
 마지막으로 `delete –l 5 –f`를 입력하였다.
 
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/image15.png?raw=true" title="image15.png" alt="image15.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image15.png?raw=true" title="image15.png" alt="image15.png"></img><br/>
 </center>
 
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/image16.png?raw=true" title="image16.png" alt="image16.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image16.png?raw=true" title="image16.png" alt="image16.png"></img><br/>
 </center>
 
 성공적으로 수행되었다.
 
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/image17.png?raw=true" title="image17.png" alt="image17.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image17.png?raw=true" title="image17.png" alt="image17.png"></img><br/>
 </center>
 
 `list` 명령어와 `trash` 명령어를 수행하였다. 
@@ -195,15 +195,15 @@ Linux File Comparer
 `restore 2`를 입력해보겠다.
 
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/image18.png?raw=true" title="image18.png" alt="image18.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image18.png?raw=true" title="image18.png" alt="image18.png"></img><br/>
 </center>
 
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/image19.png?raw=true" title="image19.png" alt="image19.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image19.png?raw=true" title="image19.png" alt="image19.png"></img><br/>
 </center>
 
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/image20.png?raw=true" title="image20.png" alt="image20.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image20.png?raw=true" title="image20.png" alt="image20.png"></img><br/>
 </center>
 
 성공적으로 파일이 복원되었다.
@@ -211,57 +211,57 @@ Linux File Comparer
 프로그램을 종료한 뒤에 다시 `trash`를 입력하여도 쓰레기통 정보가 유효하다.
 
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/image21.png?raw=true" title="image21.png" alt="image21.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image21.png?raw=true" title="image21.png" alt="image21.png"></img><br/>
 </center>
 
 #### `root`로 실행한 경우
  로그를 남기기 위해 여러 작업을 수행하였다.
 
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/image27.png?raw=true" title="image27.png" alt="image27.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image27.png?raw=true" title="image27.png" alt="image27.png"></img><br/>
 </center>
 
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/image28.png?raw=true" title="image28.png" alt="image28.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image28.png?raw=true" title="image28.png" alt="image28.png"></img><br/>
 </center>
 
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/image29.png?raw=true" title="image29.png" alt="image29.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image29.png?raw=true" title="image29.png" alt="image29.png"></img><br/>
 </center>
 
 삭제 작업에 대해 로그가 잘 기록된다.
 
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/image30.png?raw=true" title="image30.png" alt="image30.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image30.png?raw=true" title="image30.png" alt="image30.png"></img><br/>
 </center>
 
 휴지통에 파일과 정보가 잘 저장된다.
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/image31.png?raw=true" title="image31.png" alt="image31.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image31.png?raw=true" title="image31.png" alt="image31.png"></img><br/>
 </center>
 
 파일 2개를 각각 복구하였고, fileset에 다시 복원되는 모습이다.
 
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/image32.png?raw=true" title="image32.png" alt="image32.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image32.png?raw=true" title="image32.png" alt="image32.png"></img><br/>
 </center>
 
 로그와 비교했을 때 실제로 파일이 잘 복원되었다.
 
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/image34.png?raw=true" title="image34.png" alt="image34.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image34.png?raw=true" title="image34.png" alt="image34.png"></img><br/>
 </center>
 
 / 경로부터 쓰레드를 5개로 지정하여 모든 중복 파일을 검색하였다.
 
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/image35.png?raw=true" title="image35.png" alt="image35.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image35.png?raw=true" title="image35.png" alt="image35.png"></img><br/>
 </center>
 
 검색 결과가 잘 출력된다.
 
 <center>
-        <img src="https://github.com/simjeehoon/LinuxFileComparer/blob/main/readmeimg/image36.png?raw=true" title="image36.png" alt="image36.png"></img><br/>
+        <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image36.png?raw=true" title="image36.png" alt="image36.png"></img><br/>
 </center>
 
 `list` 명령도 잘 수행된다.
