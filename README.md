@@ -16,8 +16,6 @@ Linux File Comparer
 - **Linux, Fedora** : `sudo dnf-get install libssl-devel` 로 라이브러리 설치 필요
 - **MacOS** : `homebrew` ([https://brew.sh/](https://brew.sh/) 참고) 설치 -> `% brew install openssl`
 
-`pthread` 라이브러리를 사용합니다.
-
 ### 2) make 명령어 이용
 
 <center>
@@ -113,7 +111,7 @@ Linux File Comparer
 > * `-t` : 가장 최근에 수정한 파일을 남겨두고 나머지 동일한(중복) 파일을 휴지통으로 이동
 
 #### delete 예시
- *fsha1 예시*의 1번 세트의 2번 파일을 삭제하기 위해 `delete –l 1 –d 2`를 입력해보겠습니다.
+ *fsha1 예시*의 1번 세트의 2번 파일을 삭제하기 위해 `delete –l 1 –d 2`를 입력합니다.
 
  
 <center>
@@ -126,7 +124,7 @@ Linux File Comparer
         <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image09.png?raw=true" title="image09.png" alt="image09.png"></img><br/>
 </center>
 
-`delete –l 5 –i` 를 수행해보겠습니다.
+`delete –l 5 –i` 를 수행합니다.
 
 <center>
         <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image10.png?raw=true" title="image10.png" alt="image10.png"></img><br/>
@@ -138,7 +136,7 @@ Linux File Comparer
 
 완료.
 
-`delete –l 1 –t`를 입력하여 휴지통에 파일을 넣어보겠습니다.
+`delete –l 1 –t`를 입력하여 휴지통에 파일을 넣습니다.
 
 <center>
         <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image12.png?raw=true" title="image12.png" alt="image12.png"></img><br/>
@@ -154,7 +152,7 @@ Linux File Comparer
 
 완료.
 
-마지막으로 `delete –l 5 –f`를 수행해보겠습니다.
+마지막으로 `delete –l 5 –f`를 수행합니다.
 
 <center>
         <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image15.png?raw=true" title="image15.png" alt="image15.png"></img><br/>
@@ -164,7 +162,7 @@ Linux File Comparer
         <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image16.png?raw=true" title="image16.png" alt="image16.png"></img><br/>
 </center>
 
-로그에서 작업이 성공적으로 수행된 것을 확인할 수 있습니다.
+로그에서 작업을 확인할 수 있습니다.
 
 ---
 ### 3) list 명령
@@ -222,7 +220,7 @@ Linux File Comparer
 
 #### restore 예시
 
-`restore 2`를 입력해보겠습니다.
+`restore 2`를 입력합니다.
 
 <center>
         <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image18.png?raw=true" title="image18.png" alt="image18.png"></img><br/>
