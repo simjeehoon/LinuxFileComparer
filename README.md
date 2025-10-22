@@ -173,7 +173,7 @@ Linux File Comparer
 
 > `list -l [LIST_TYPE] -c [CATEGORY] -o [ORDER]`  
 >> `[LIST_TYPE]`에서 `[CATEGORY]`를 `[ORDER]` 순으로 정렬.  
->> 옵션 생략시 기본값 세팅옵션 생략시 기본값 세팅
+>> 옵션 생략시 기본값 세팅
 * `list` 명령은 사용자가 입력한 정렬 조건에 따라 현재의 파일 관리 링크드리스트를 정렬하고 중복 파일이 존재하는 파일 리스트들을 순차적으로 출력합니다.
 * `[LIST_TYPE]`과 `[CATEGORY]`의 조합에 따라 아래의 표와 같이 동작합니다.
    * `[LIST_TYPE]`에는 
