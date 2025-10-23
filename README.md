@@ -272,7 +272,7 @@ fsha1 명령의 동작 구조를 나타낸 것입니다.
         <img src="https://github.com/simjeehoon/src_repository/blob/master/LinuxFileComparer/main/image03.png?raw=true" title="image03.png" alt="image03.png"></img><br/>
 </center>
 
- 1. `thread_search` 함수에서 `path_queue`와 `fileset`은 공유되는 메모리 공간이므로 접근시 mutex_lock을 수행합니다.
+ 1. `thread_search` 함수에서 `path_queue`와 `fileset`은 공유자원이므로 접근시 mutex_lock을 수행합니다.
  2. 처음에 `path_queue`가 비어있는지 확인하고, 비어있다면 현재 쓰레드의 대기 플래그를 설정합니다.
  3. 그리고 모든 쓰레드의 대기 플래그가 설정되어 있는지 검사합니다.
     * 만약 모든 쓰레드의 대기 플래그가 설정되어 있다면, 모든 디렉터리를 탐색한 것이므로 탐색 종료 플래그를 설정하고 모든 쓰레드를 깨운 뒤 종료합니다.
@@ -285,7 +285,9 @@ fsha1 명령의 동작 구조를 나타낸 것입니다.
     2. 디렉터리라면 `path_queue`에 삽입합니다. 디렉터리 탐색이 끝났다면 모든 쓰레드를 깨운 뒤 자신을 재귀 호출합니다.
 
 
- * 탐색이 끝난 뒤 삭제(`delete`) 명령 프롬프트를 수행합니다. 
+ * 탐색이 끝난 뒤 삭제(`delete`) 명령 프롬프트를 수행합니다.
+
+---
  * 휴지통으로 파일을 이동시키는 작업은 [sha_hash_finder_beta](https://github.com/simjeehoon/sha_hash_finder_beta) 에서와 다르게 동작합니다. 아래의 그림은 동작 흐름입니다.
 
 <center>
@@ -293,7 +295,7 @@ fsha1 명령의 동작 구조를 나타낸 것입니다.
 </center>
 
  * 휴지통 파일 정보는 메인 메모리의 `global_trash_list`에 저장됩니다.
- * 휴지통 파일 정보가 추가되거나 삭제될 때마다 `save_trash_list`를 호출하여 `~/.Trash/info/.trashinfo` 파일로 변경 내용을 저장합니다.
+ * 휴지통 파일 정보가 추가되거나 삭제될 때마다 `save_trash_list`를 호출합니다. 이는 `global_trash_list` 데이터를 `~/.Trash/info/.trashinfo` 파일에 변경 내용을 저장하는 함수입니다.
  * 휴지통의 위치는 `~/.Trash/files` 입니다.
  * 휴지통으로 파일을 옮길 경우 원래 파일 이름과 다르게 저장됩니다.
    * 파일 이름은 휴지통 내에서 해쉬가 유일한 파일인 경우에는 해쉬값이 됩니다.
