@@ -295,7 +295,7 @@ fsha1 명령의 동작 구조를 나타낸 것입니다.
 </center>
 
  * 휴지통 파일 정보는 메인 메모리의 `global_trash_list`에 저장됩니다.
- * 휴지통 파일 정보가 추가되거나 삭제될 때마다 `save_trash_list`를 호출합니다. 이는 `global_trash_list` 데이터를 `~/.Trash/info/.trashinfo` 파일에 변경 내용을 저장하는 함수입니다.
+ * 휴지통 파일 정보가 추가되거나 삭제될 때마다 `save_trash_list`를 호출합니다. 이는 `global_trash_list` 데이터를 `~/.Trash/info/.trashinfo` 파일에 저장하는 함수입니다.
  * 휴지통의 위치는 `~/.Trash/files` 입니다.
  * 휴지통으로 파일을 옮길 경우 원래 파일 이름과 다르게 저장됩니다.
    * 파일 이름은 휴지통 내에서 해쉬가 유일한 파일인 경우에는 해쉬값이 됩니다.
